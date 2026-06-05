@@ -103,7 +103,7 @@ function ContactPage({ onOpenWA }) {
       </header>
 
       <section className="section" style={{ paddingTop: 80 }}>
-        <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64 }}>
+        <div className="wrap contact-grid">
           <div>
             <div className="eyebrow">Adres</div>
             <h3 style={{ marginTop: 12, fontSize: 28 }}>Atölye & Showroom</h3>

@@ -150,13 +150,7 @@ function HeroSlider({ onOpenWA }) {
       }} />
 
       {/* Content */}
-      <div style={{
-        position: 'relative', zIndex: 4,
-        height: '100%',
-        display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
-        padding: '60px 80px',
-        maxWidth: 900,
-      }}>
+      <div className="hero-slide-content" style={{ position: 'relative', zIndex: 4, height: '100%', maxWidth: 900 }}>
         <div key={cur} style={{ animation: 'slideIn 0.7s cubic-bezier(.2,.7,.2,1) both' }}>
           <div className="eyebrow" style={{ marginBottom: 20 }}>{s.eyebrow}</div>
           <h1 style={{
@@ -187,7 +181,7 @@ function HeroSlider({ onOpenWA }) {
       </div>
 
       {/* Prev / Next */}
-      <button onClick={back} style={{
+      <button className="slider-arrow" onClick={back} style={{
         position: 'absolute', left: 28, top: '50%', transform: 'translateY(-50%)',
         zIndex: 5, background: 'rgba(0,0,0,0.4)', border: '1px solid var(--line-2)',
         color: 'var(--ink-soft)', width: 48, height: 48, cursor: 'pointer',
@@ -196,7 +190,7 @@ function HeroSlider({ onOpenWA }) {
       }} onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--gold)'}
          onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--line-2)'}>‹</button>
 
-      <button onClick={next} style={{
+      <button className="slider-arrow" onClick={next} style={{
         position: 'absolute', right: 28, top: '50%', transform: 'translateY(-50%)',
         zIndex: 5, background: 'rgba(0,0,0,0.4)', border: '1px solid var(--line-2)',
         color: 'var(--ink-soft)', width: 48, height: 48, cursor: 'pointer',
@@ -271,12 +265,7 @@ function CatCircles() {
         </div>
 
         {/* 5 circles */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(5, 1fr)',
-          gap: 12,
-          alignItems: 'start',
-        }}>
+        <div className="cat-circles-grid">
           {CATEGORIES.map((c, i) => {
             const isHov = hovered === c.slug;
             return (
@@ -287,9 +276,8 @@ function CatCircles() {
                 onMouseLeave={() => setHovered(null)}
               >
                 {/* Outer ring + circle */}
-                <div style={{
+                <div className="cat-circle-ring" style={{
                   position: 'relative',
-                  width: 148, height: 148,
                   borderRadius: '50%',
                   padding: 5,
                   background: isHov
@@ -415,11 +403,7 @@ function HomePage({ onOpenWA, onOrder }) {
               Tüm Kategoriler <span className="arrow">→</span>
             </button>
           </div>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: 20,
-          }}>
+          <div className="home-featured-grid">
             {featured.slice(0, 8).map(p => (
               <ProductCard key={p.id} product={p} onOrder={onOrder} />
             ))}

@@ -13,13 +13,13 @@ function CategoryPage({ catSlug, onOrder }) {
             { label: 'Anasayfa', path: '/' },
             { label: cat.name },
           ]} />
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 40, flexWrap: 'wrap' }}>
+          <div className="cat-page-header-inner">
             <div style={{ maxWidth: 720 }}>
               <div className="eyebrow">Kategori · 0{idx + 1} / 0{CATEGORIES.length}</div>
               <h1>{cat.name}</h1>
               <p className="lede">{cat.description}</p>
             </div>
-            <div style={{ textAlign: 'right' }}>
+            <div className="cat-count" style={{ textAlign: 'right' }}>
               <div className="eyebrow muted">Alt Kategori</div>
               <div style={{ fontFamily: 'Cormorant Garamond', fontSize: 56, color: 'var(--gold)', lineHeight: 1 }}>
                 {cat.subs.length}
@@ -92,7 +92,7 @@ function SubcategoryPage({ catSlug, subSlug, onOrder }) {
             { label: cat.name, path: `/kategori/${cat.slug}` },
             { label: sub.name },
           ]} />
-          <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: 40, alignItems: 'end' }}>
+          <div className="sub-header-grid">
             <div>
               <div className="eyebrow">{cat.name}</div>
               <h1>{sub.name}</h1>
@@ -101,7 +101,7 @@ function SubcategoryPage({ catSlug, subSlug, onOrder }) {
                 ekibimizden — kişiselleştirilmiş çözümler için WhatsApp'a yazın.
               </p>
             </div>
-            <div className="sub-tile" style={{ aspectRatio: '4/3' }}>
+            <div className="sub-tile sub-tile-preview" style={{ aspectRatio: '4/3' }}>
               <div className="img" style={{ backgroundImage: `url(${sub.cover})` }}></div>
               <div className="ov" style={{ background: 'linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.85))' }}>
                 <span className="eyebrow">{sub.name.toUpperCase()}</span>
@@ -180,7 +180,7 @@ function ProductPage({ productId, onOrder }) {
         </div>
       </header>
 
-      <section style={{ padding: '0 56px' }}>
+      <section className="product-detail-wrap">
         <div className="wrap" style={{ padding: 0 }}>
           <div className="product-detail">
             {/* Gallery */}
