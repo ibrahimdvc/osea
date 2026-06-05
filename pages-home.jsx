@@ -240,9 +240,9 @@ function CatCircles() {
   const [hovered, setHovered] = useState(null);
   return (
     <section style={{
-      background: 'var(--bg-1)',
-      borderTop: '1px solid var(--line)',
-      borderBottom: '1px solid var(--line)',
+      background: 'var(--lt-bg-1)',
+      borderTop: '1px solid var(--lt-line)',
+      borderBottom: '1px solid var(--lt-line)',
       padding: '72px 0 80px',
       position: 'relative',
     }}>
